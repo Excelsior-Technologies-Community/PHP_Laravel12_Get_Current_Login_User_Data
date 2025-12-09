@@ -1,4 +1,4 @@
-# Laravel — Get Current Logged-in User (Full Project Guide)
+# PHP_Laravel12_Get_Current_Login_User_Data
 ---
 This *README.md* provides a *complete Laravel project structure* with *all code, **all comments, and **step‑by‑step explanation*.
 It includes:
@@ -22,8 +22,8 @@ Run these in your terminal:
 # 1. Create Laravel project
 ```
 
-composer create-project laravel/laravel myproject
-cd myproject
+composer create-project laravel/laravel PHP_Laravel12_Get_Current_Login_User_Data "12.*"
+cd PHP_Laravel12_Get_Current_Login_User_Data
 ```
 
 # 2. Install Laravel Breeze (for login/register UI)
