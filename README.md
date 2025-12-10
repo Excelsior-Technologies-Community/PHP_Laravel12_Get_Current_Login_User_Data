@@ -3,19 +3,19 @@
 This *README.md* provides a *complete Laravel project structure* with *all code, **all comments, and **step‑by‑step explanation*.
 It includes:
 ---
-* ✔ Registration & Login (Laravel Breeze)
-* ✔ Store sessions in database
-* ✔ Get current logged‑in user
-* ✔ Show profile page
-* ✔ Show all users page
-* ✔ Auto‑set created_by & updated_by
-* ✔ Migrations + Models + Controllers + Routes + Views
+*  Registration & Login (Laravel Breeze)
+*  Store sessions in database
+*  Get current logged‑in user
+*  Show profile page
+*  Show all users page
+*  Auto‑set created_by & updated_by
+*  Migrations + Models + Controllers + Routes + Views
 
 Everything is made *as simple as possible* for beginners.
 
 ---
 
-# 📌 1. Project Setup — Commands
+#  1. Project Setup — Commands
 
 Run these in your terminal:
 
@@ -59,7 +59,7 @@ Visit:
 
 ---
 
-# 📌 2. .env Configuration
+#  2. .env Configuration
 
 Make sure your .env file contains:
 ```
@@ -81,7 +81,7 @@ SESSION_LIFETIME=120
 
 ---
 
-# 📌 3. Migrations (Database Tables)
+#  3. Migrations (Database Tables)
 
 The migration below creates *users, **password_resets, and **sessions* tables.
 
@@ -147,7 +147,7 @@ return new class extends Migration
 
 
 
-# 📌 4. User Model
+#  4. User Model
 
 ### app/Models/User.php
 
@@ -201,7 +201,7 @@ class User extends Authenticatable
 ```
 
 
-# 📌 5. Controllers
+#  5. Controllers
 
 ## 5.1 UserController
 
@@ -327,7 +327,7 @@ class RegisteredUserController extends Controller
 ```
 
 
-# 📌 6. Routes
+#  6. Routes
 
 ### routes/web.php
 
@@ -360,7 +360,7 @@ require __DIR__ . '/auth.php';
 ```
 
 
-# 📌 7. Blade Layout
+#  7. Blade Layout
 
 ### resources/views/layouts/app.blade.php
 
@@ -410,7 +410,7 @@ require __DIR__ . '/auth.php';
 ```
 
 
-# 📌 8. Profile Page
+#  8. Profile Page
 
 ### resources/views/users/profile.blade.php
 
@@ -444,7 +444,7 @@ require __DIR__ . '/auth.php';
 ```
 
 
-# 📌 9. Users List Page
+#  9. Users List Page
 
 ### resources/views/users/index.blade.php
 
@@ -498,7 +498,7 @@ require __DIR__ . '/auth.php';
 
 ```
 
-# 📌 10. How to Get Logged-in User
+#  10. How to Get Logged-in User
 
 You can get the current user using:
 
@@ -524,7 +524,7 @@ Auth::id();
 ```
 ---
 
-# 🎉 All Done!
+#  All Done!
 
 Your entire Laravel system is ready with:
 ```
