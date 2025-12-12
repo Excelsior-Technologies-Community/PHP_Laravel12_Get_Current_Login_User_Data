@@ -552,7 +552,7 @@ Index Page:
 
 <img width="1892" height="964" alt="Screenshot 2025-12-08 222613" src="https://github.com/user-attachments/assets/ab8cdf6c-cca4-4d16-90ef-7236248cb758" />
 
-Profile:
+Profile Page:
 
 <img width="1894" height="967" alt="Screenshot 2025-12-08 223031" src="https://github.com/user-attachments/assets/797fec4e-2924-46c1-96a6-3ceedfa04670" />
 
