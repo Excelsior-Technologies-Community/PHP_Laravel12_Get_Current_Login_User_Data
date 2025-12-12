@@ -526,6 +526,37 @@ Auth::id();
 
 #  All Done!
 
+STEP 11: Run Application
+```
+
+php artisan serve
+```
+
+ Open in Browser:
+```
+
+http://localhost:8000/custom
+```
+
+You can see this type Output :
+
+Register page:
+
+<img width="1919" height="967" alt="Screenshot 2025-12-08 222601" src="https://github.com/user-attachments/assets/27adfc02-da8d-463a-a60c-4bd4f725ce01" />
+
+Login page:
+
+<img width="1919" height="961" alt="Screenshot 2025-12-09 104415" src="https://github.com/user-attachments/assets/8175f878-a6e7-490a-893c-bf6978de8854" />
+
+Index Page:
+
+<img width="1892" height="964" alt="Screenshot 2025-12-08 222613" src="https://github.com/user-attachments/assets/ab8cdf6c-cca4-4d16-90ef-7236248cb758" />
+
+Profile Page:
+
+<img width="1894" height="967" alt="Screenshot 2025-12-08 223031" src="https://github.com/user-attachments/assets/797fec4e-2924-46c1-96a6-3ceedfa04670" />
+
+
 Your entire Laravel system is ready with:
 ```
 * Registration & Login
