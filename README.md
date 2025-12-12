@@ -548,7 +548,7 @@ Login page:
 
 <img width="1919" height="961" alt="Screenshot 2025-12-09 104415" src="https://github.com/user-attachments/assets/8175f878-a6e7-490a-893c-bf6978de8854" />
 
-Users:
+Index Page:
 
 <img width="1892" height="964" alt="Screenshot 2025-12-08 222613" src="https://github.com/user-attachments/assets/ab8cdf6c-cca4-4d16-90ef-7236248cb758" />
 
