@@ -9,15 +9,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('created_by')->nullable()->after('id');
-            $table->unsignedBigInteger('updated_by')->nullable()->after('created_by');
+            $table->timestamp('last_login_at')->nullable()->after('updated_by');
+            $table->string('last_login_ip', 45)->nullable()->after('last_login_at');
         });
     }
 
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['created_by', 'updated_by']);
+            $table->dropColumn(['last_login_at', 'last_login_ip']);
         });
     }
 };

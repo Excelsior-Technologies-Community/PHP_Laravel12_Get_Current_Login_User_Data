@@ -15,10 +15,12 @@
                     {{ ucfirst($user->status) }}
                 </span>
             </p>
-            <p><span class="font-semibold">Created By:</span> {{ $user->created_by ?? 'N/A' }}</p>
-            <p><span class="font-semibold">Updated By:</span> {{ $user->updated_by ?? 'N/A' }}</p>
+            <p><span class="font-semibold">Created By:</span> {{ $user->creator->name ?? 'N/A' }}</p>
+            <p><span class="font-semibold">Updated By:</span> {{ $user->updater->name ?? 'N/A' }}</p>
             <p><span class="font-semibold">Created At:</span> {{ $user->created_at }}</p>
             <p><span class="font-semibold">Updated At:</span> {{ $user->updated_at }}</p>
+            <p><span class="font-semibold">Last Login At:</span> {{ $user->last_login_at ?? 'Never' }}</p>
+            <p><span class="font-semibold">Last Login IP:</span> {{ $user->last_login_ip ?? 'N/A' }}</p>
         </div>
     </div>
 </div>

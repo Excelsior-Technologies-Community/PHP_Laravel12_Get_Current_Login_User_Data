@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     
     // List all users
     Route::get('/users', [UserController::class,'index'])->name('users.index');
+    Route::post('/users/{user}/toggle-status', [UserController::class,'toggleStatus'])->name('users.toggleStatus');
 });
 
 require __DIR__.'/auth.php';

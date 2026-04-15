@@ -26,6 +26,12 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        // Update last login time and IP
+        $user = $request->user();
+        $user->last_login_at = now();
+        $user->last_login_ip = $request->ip();
+        $user->save();
+
         $request->session()->regenerate();
 
         return redirect()->intended(route('dashboard', absolute: false));
