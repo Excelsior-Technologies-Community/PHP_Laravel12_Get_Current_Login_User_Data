@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\LoginHistory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,11 +27,20 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        // Update last login time and IP
         $user = $request->user();
+        
+        // Updating user table columns
         $user->last_login_at = now();
         $user->last_login_ip = $request->ip();
         $user->save();
+
+        // Saving data to login_histories table
+        LoginHistory::create([
+            'user_id'    => $user->id,
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'login_at'   => now(),
+        ]);
 
         $request->session()->regenerate();
 
