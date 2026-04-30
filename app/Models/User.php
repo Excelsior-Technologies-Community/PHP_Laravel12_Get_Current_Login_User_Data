@@ -11,7 +11,6 @@ class User extends Authenticatable
         'name', 'email', 'password', 'status', 'created_by', 'updated_by', 'last_login_at', 'last_login_ip'
     ];
 
-    // Automatically set created_by and updated_by
     protected static function booted()
     {
         static::creating(function ($user) {
@@ -27,7 +26,6 @@ class User extends Authenticatable
         });
     }
 
-    // Relationships for displaying creator and updater names
     public function creator()
     {
         return $this->belongsTo(User::class, 'created_by');
@@ -36,5 +34,10 @@ class User extends Authenticatable
     public function updater()
     {
         return $this->belongsTo(User::class, 'updated_by');
+    }
+
+    public function loginHistories()
+    {
+        return $this->hasMany(LoginHistory::class, 'user_id')->orderBy('login_at', 'desc');
     }
 }

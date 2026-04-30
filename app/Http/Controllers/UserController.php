@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -16,13 +16,19 @@ class UserController extends Controller
 
     public function profile()
     {
-        $user = Auth::user()->load(['creator', 'updater']); // Load relationships
-        return view('users.profile', compact('user'));
+        $user = Auth::user()->load(['creator', 'updater', 'loginHistories']); 
+        
+        $sessions = DB::table('sessions')
+            ->where('user_id', $user->id)
+            ->orderBy('last_activity', 'desc')
+            ->get();
+
+        return view('users.profile', compact('user', 'sessions'));
     }
 
     public function index()
     {
-        $users = User::with(['creator', 'updater'])->get(); // Load relationships
+        $users = User::with(['creator', 'updater'])->get();
         return view('users.index', compact('users'));
     }
 
@@ -39,20 +45,14 @@ class UserController extends Controller
             'email'      => $request->email,
             'password'   => bcrypt($request->password),
             'status'     => 'active',
-
-            // VERY IMPORTANT → now fields will never be null
-            // 'created_by' => Auth::id(),
-
         ]);
 
         return back()->with('success', 'User created successfully.');
     }
 
-       // Toggle user status
     public function toggleStatus(User $user)
     {
         $user->status = $user->status === 'active' ? 'inactive' : 'active';
-        $user->updated_by = Auth::id();
         $user->save();
 
         return back()->with('success', 'User status updated successfully.');
